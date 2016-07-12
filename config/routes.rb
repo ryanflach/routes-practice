@@ -4,10 +4,8 @@ Rails.application.routes.draw do
 
   resources :students
 
-  Rails.application.routes.draw do
-    namespace :school do
-      resources :teachers, param: :last_name, only: [:index, :show]
-    end
+  namespace :school do
+    resources :teachers, param: :last_name, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
